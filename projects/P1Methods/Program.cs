@@ -3,36 +3,29 @@ Main();
 
 static void Main()
 {
-    CountUp(0,1);
-    CountDown(1,0);
-    CountUp(0,2);
-    CountDown(2,0);
-    CountUp(0,3);
-    CountDown(3,0);
+    Count(2,3);
+    Count(100,101);
+    Count(10,8);
+    Count(1,-1);
+    Count(1337,1337);
 }
 
-static void CountUp(int from, int to) //CountUp method
+static void Count(int from, int to) //Count method
 {
-    Console.WriteLine($"Counting from {from} to {to}:");
-    for (int counter = from; counter <= to; counter++) // condition-statement
+    if (from < to)
     {
-        Console.WriteLine(counter); // loop-body
+        Console.WriteLine($"Counting from {from} to {to}:");
+        for (int counter = from; counter <= to; counter++)
+         {
+            Console.WriteLine(counter);
+         }
+    }
+    else
+    {
+        Console.WriteLine($"Counting from {from} to {to}:");
+        for (int counter = from; counter >= to; counter--)
+        {
+            Console.WriteLine(counter); 
+        }
     }
 }
-// initial-statement = int counter = x number;
-// condition-statement = counter <= x; 
-// loop-body = Console.WriteLine(counter); (write out the counter number until int counter is equal to 5)
-// iteration-statement = counter++ (make sure the counter continue of ticking up)
-
-static void CountDown(int from, int to) //CountDown method
-{
-    Console.WriteLine($"Counting from {from} to {to}:");
-    for (int counter = from; counter >= to; counter--)
-    {
-        Console.WriteLine(counter); 
-    }
-}
-// initial-statement = int counter = x number;
-// condition-statement = counter >= x; 
-// loop-body = Console.WriteLine(counter); (write out the counter number until int counter is equal to 0)
-// iteration-statement = counter-- (make sure the counter continue of ticking down)
