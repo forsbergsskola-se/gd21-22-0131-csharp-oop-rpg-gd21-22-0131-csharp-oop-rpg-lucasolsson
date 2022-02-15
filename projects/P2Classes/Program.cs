@@ -14,7 +14,10 @@ person.IntroduceYourself();
 
 public class Person
 {
-    public string name;
+    //Its like a variable that belongs to each instance of the class
+    public string name; //abstract: PROPERTY of the class (what it IS or HAS)
+    
+    
     string[] persons = new string[3];
   
     public void IntroduceYourself() //Instance method
