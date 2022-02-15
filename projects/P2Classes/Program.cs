@@ -1,52 +1,45 @@
 ﻿
-// Person myPerson = new Person();
-// Animal myAnimal = new Animal();
-// Car myCar = new Car();
-//
-// // This calls the different-methods in the classes on the instance
-// myPerson.person();
-// myAnimal.animal();
-// myCar.car();
-
-//Calls out the method in class Person
-Person person = new Person();
-person.IntroduceYourself();
-
 public class Person
 {
     //Its like a variable that belongs to each instance of the class
     public string name; //abstract: PROPERTY of the class (what it IS or HAS)
-    
-    
-    string[] persons = new string[3];
-  
-    public void IntroduceYourself() //Instance method
+
+    public void IntroduceYourself()
     {
-        for(var name = 0; name < persons.Length; name++)
+        Console.WriteLine($"Hello, my name is {name}");
+    }
+
+    static void Main()
+    {
+        Person[] persons = new Person[3];
+        
+        for(int i = 0; i < persons.Length; i++)
         { 
             //Prints and wants input 3 times and stores the input in array "persons"
+            Person newFriend = new Person();
             Console.WriteLine("Give me a name.");
-            persons[name] = Console.ReadLine();
+            newFriend.name = Console.ReadLine();
+            persons[i] = newFriend;
         }
 
-        foreach (string value in persons)
+        foreach (Person friend in persons)
         {
-            Console.WriteLine($"Hello, my name is {value}");
+            friend.IntroduceYourself();
         }
     }
     
 }
-public class Animal
-{
-    public void animal()
-    {
-        Console.WriteLine("Animal");
-    }
-}
-public class Car
-{
-    public void car()
-    {
-        Console.WriteLine("Car");
-    }
-}
+// public class Animal
+// {
+//     public void animal()
+//     {
+//         Console.WriteLine("Animal");
+//     }
+// }
+// public class Car
+// {
+//     public void car()
+//     {
+//         Console.WriteLine("Car");
+//     }
+// }
